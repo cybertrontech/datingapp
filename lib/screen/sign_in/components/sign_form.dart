@@ -4,6 +4,7 @@ import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
 import 'package:datingapp/screen/forgot_password/forgot_password_screen.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
+import 'package:datingapp/screen/normal_details/gender_details/gender_details.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -84,7 +85,7 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamed(context, GenderDetails.routeName);
               }
             }
           ),
