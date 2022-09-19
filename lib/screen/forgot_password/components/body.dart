@@ -1,5 +1,6 @@
 
 import 'package:datingapp/components/custom_surfix_icon.dart';
+import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/components/no_account_text.dart';
 import 'package:flutter/material.dart';
 
@@ -94,16 +95,15 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             ),
           ),
           SizedBox(height: (30)),
-          SizedBox(height: 30),
-          MaterialButton(
-            color: kPrimaryColor,
-            child: Text("Continue",style: TextStyle(color: kPrimaryLightColor),),
-            onPressed: () {
+          DefaultButton(
+            text: "Continue",
+            press:() {
               if (_formKey.currentState!.validate()) {
                 // Do what you want to do
               }
             },
           ),
+
           SizedBox(height: 10),
           NoAccountText(),
         ],

@@ -17,7 +17,10 @@ class Body extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 50),
-                Text("Register Account",style: TextStyle(fontWeight: FontWeight.bold),),
+                Text("Register Account",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 28,
+                ),),
+                SizedBox(height: 5),
+
                 Text(
                   "Complete your details or continue \nwith social media",
                   textAlign: TextAlign.center,

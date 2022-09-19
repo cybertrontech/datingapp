@@ -55,7 +55,7 @@ class _BodyState extends State<Body> {
               flex: 2,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: 123
+                    horizontal: 55
                 ),
                 child: Column(
                   children: <Widget>[

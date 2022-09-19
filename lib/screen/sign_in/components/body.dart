@@ -11,12 +11,11 @@ class Body extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: (20)),
+          padding:EdgeInsets.symmetric(horizontal: (20)),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: 30),
                 Text(
                   "Welcome Back",
                   style: TextStyle(
@@ -25,13 +24,14 @@ class Body extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 5),
                 Text(
                   "Sign in with your email and password  \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 60),
                 SignForm(),
-                SizedBox(height: 30),
+                SizedBox(height: MediaQuery.of(context).size.height*0.1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
