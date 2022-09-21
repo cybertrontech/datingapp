@@ -1,4 +1,6 @@
 
+import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
+import 'package:datingapp/screen/details_screen/upload_photo/upload_image.dart';
 import 'package:datingapp/screen/sign_up/sign_up_screen.dart';
 import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:flutter/widgets.dart';
@@ -24,6 +26,8 @@ final Map<String, WidgetBuilder> routes = {
   GenderDetails.routeName:(context)=> GenderDetails(),
   EducationDetails.routeName:(context)=>EducationDetails(),
   SocialStatusDetails.routeName:(context)=>SocialStatusDetails(),
+  UploadImage.routeName:(context)=>UploadImage(),
+  PersonalDetails.routeName:(context)=>PersonalDetails(),
   // DetailsScreen.routeName: (context) => DetailsScreen(),
   // CartScreen.routeName: (context) => CartScreen(),
   // ProfileScreen.routeName: (context) => ProfileScreen(),
