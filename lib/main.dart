@@ -1,12 +1,9 @@
 import 'package:datingapp/routes.dart';
-import 'package:datingapp/screen/normal_details/gender_details/components/widget/slidedowncontainer.dart';
-import 'package:datingapp/screen/normal_details/gender_details/gender_details.dart';
 import 'package:datingapp/screen/splash/components/body.dart';
 import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
 import 'package:flutter/material.dart';
 
-import 'screen/normal_details/gender_details/components/gender_head.dart';
 
 void main() {
   runApp(const MyApp());

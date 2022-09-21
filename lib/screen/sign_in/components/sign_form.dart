@@ -2,9 +2,9 @@
 import 'package:datingapp/components/custom_surfix_icon.dart';
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
+import 'package:datingapp/screen/details_screen/gender_details/gender_details.dart';
 import 'package:datingapp/screen/forgot_password/forgot_password_screen.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
-import 'package:datingapp/screen/normal_details/gender_details/gender_details.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 

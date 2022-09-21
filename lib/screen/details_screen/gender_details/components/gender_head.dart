@@ -1,6 +1,5 @@
 import 'package:datingapp/components/circular_button.dart';
 import 'package:datingapp/components/constant_text.dart';
-import 'package:datingapp/screen/normal_details/gender_details/components/gender_form.dart';
 import 'package:flutter/material.dart';
 
 class GenderHead  extends StatefulWidget {

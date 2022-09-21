@@ -1,5 +1,6 @@
-import 'package:datingapp/screen/normal_details/gender_details/components/body.dart';
 import 'package:flutter/material.dart';
+
+import 'components/body.dart';
 
 class GenderDetails extends StatelessWidget {
   static String routeName = "/gender_details";

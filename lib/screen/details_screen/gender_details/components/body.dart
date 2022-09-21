@@ -1,6 +1,6 @@
 import 'package:datingapp/constants.dart';
-import 'package:datingapp/screen/normal_details/gender_details/components/gender_form.dart';
-import 'package:datingapp/screen/normal_details/gender_details/components/gender_head.dart';
+import 'package:datingapp/screen/details_screen/gender_details/components/gender_form.dart';
+import 'package:datingapp/screen/details_screen/gender_details/components/gender_head.dart';
 import 'package:flutter/material.dart';
 
 class body extends StatelessWidget {

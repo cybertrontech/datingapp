@@ -21,7 +21,7 @@ class DefaultButton extends StatelessWidget {
         width: double.infinity,
         height: (45),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(13),
           gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,

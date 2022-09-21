@@ -1,9 +1,8 @@
 import 'package:datingapp/components/custom_surfix_icon.dart';
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
+import 'package:datingapp/screen/details_screen/education_details/education_details.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
-import 'package:datingapp/screen/normal_details/education_details/education_details.dart';
-import 'package:datingapp/screen/normal_details/gender_details/components/widget/slidedowncontainer.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:date_time_picker/date_time_picker.dart';

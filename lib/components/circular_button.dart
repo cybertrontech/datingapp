@@ -22,25 +22,22 @@ class CircularButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool _enabled = false;
-
     return Container(
-
       // width: 60,
       // height: (35),
       child:
       MaterialButton(
-        minWidth: 10,
-        height: 16,
+        minWidth: 1,
+        height: 30,
         shape:
         RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
-           side:
-           BorderSide(color: Colors.black12)
-
-      ),
+            side:
+            BorderSide(color: Colors.black12)
+        ),
         color: (_enabled
             ? Colors.pink[50]
-            : Colors.white
+            : kbackgroundcolor
         ),
 
         onPressed: (){
@@ -48,7 +45,7 @@ class CircularButton extends StatelessWidget {
         child: Text(
           text!,
           style: TextStyle(
-            fontSize: (14),
+            fontSize: (11),
             color: Colors.black87,
           ),
         ),
@@ -56,3 +53,9 @@ class CircularButton extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+

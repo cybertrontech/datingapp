@@ -1,7 +1,8 @@
+import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
-import 'package:datingapp/screen/normal_details/education_details/components/education_form.dart';
-import 'package:datingapp/screen/normal_details/education_details/components/eduction_head.dart';
-import 'package:datingapp/screen/normal_details/education_details/education_details.dart';
+import 'package:datingapp/screen/details_screen/education_details/components/education_form.dart';
+import 'package:datingapp/screen/details_screen/education_details/components/eduction_head.dart';
+import 'package:datingapp/screen/details_screen/education_details/education_details.dart';
 import 'package:flutter/material.dart';
 
 class body extends StatelessWidget {
@@ -22,7 +23,6 @@ class body extends StatelessWidget {
               SizedBox(height: 15,),
               EducationHead(),
               EducationForm(),
-
             ],
           ),
         ),
