@@ -43,6 +43,7 @@ dependencies:
 #  flutter_sliding_up_panel: ^2.0.1
   page_transition: ^2.0.9
   sliding_up_panel: ^2.0.0+1
+  water_drop_nav_bar: ^2.2.0+4
 
 
 

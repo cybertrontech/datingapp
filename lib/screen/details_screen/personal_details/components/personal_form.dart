@@ -1,5 +1,6 @@
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
+import 'package:datingapp/screen/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class PersonalDetailsForm extends StatelessWidget {
@@ -20,7 +21,7 @@ class PersonalDetailsForm extends StatelessWidget {
               press: () {
                 print("object");
 
-                Navigator.pushNamed(context, PersonalDetails.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
 
               }
           ),
