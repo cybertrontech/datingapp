@@ -10,6 +10,7 @@ import 'screen/details_screen/gender_details/gender_details.dart';
 import 'screen/details_screen/social_status_details/socail_status_details.dart';
 import 'screen/forgot_password/forgot_password_screen.dart';
 import 'screen/home/home_screen.dart';
+import 'screen/home/main_page/home_page/home_page.dart';
 import 'screen/sign_in/sign_in_screen.dart';
 
 
@@ -28,6 +29,7 @@ final Map<String, WidgetBuilder> routes = {
   SocialStatusDetails.routeName:(context)=>SocialStatusDetails(),
   UploadImage.routeName:(context)=>UploadImage(),
   PersonalDetails.routeName:(context)=>PersonalDetails(),
+  HomePage.routeName:(context)=>HomePage(),
   // DetailsScreen.routeName: (context) => DetailsScreen(),
   // CartScreen.routeName: (context) => CartScreen(),
   // ProfileScreen.routeName: (context) => ProfileScreen(),

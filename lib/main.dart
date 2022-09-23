@@ -4,6 +4,8 @@ import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
 import 'package:flutter/material.dart';
 
+import 'screen/home/navigation_button_screen/components/nav_button_bar.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +23,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      // home:  test(),
-      initialRoute: SplashScreen.routeName,
-      routes: routes,
+      home:  Navigationbar(),
+      // initialRoute: SplashScreen.routeName,
+      // routes: routes,
     );
   }
 }

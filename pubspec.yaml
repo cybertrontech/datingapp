@@ -44,6 +44,8 @@ dependencies:
   page_transition: ^2.0.9
   sliding_up_panel: ^2.0.0+1
   water_drop_nav_bar: ^2.2.0+4
+  appinio_swiper: ^1.1.0
+
 
 
 

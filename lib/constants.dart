@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color.fromRGBO(255, 115, 183, 0.8862745098039215);
 const kPrimaryLightColor = Color(0xFFFFECDF);
+const kPrimaryNavbuttonColor = Color.fromRGBO(255, 115, 183, 0.8862745098039215);
 
 
 const kPrimaryGradientColor = LinearGradient(

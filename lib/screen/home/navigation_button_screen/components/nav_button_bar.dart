@@ -1,18 +1,25 @@
+import 'package:datingapp/constants.dart';
+import 'package:datingapp/screen/home/main_page/chating_page/chating_page.dart';
+import 'package:datingapp/screen/home/main_page/matches_page/matches_page.dart';
+import 'package:datingapp/screen/home/main_page/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
+
+import '../../main_page/home_page/home_page.dart';
 
 
 
 class Navigationbar extends StatefulWidget {
   const Navigationbar({Key? key}) : super(key: key);
-
   @override
   _NavigationbarState createState() => _NavigationbarState();
 }
 
+
+
 class _NavigationbarState extends State<Navigationbar> {
-  final Color navigationBarColor = Colors.white;
+
   int selectedIndex = 0;
   late PageController pageController;
   @override
@@ -23,56 +30,28 @@ class _NavigationbarState extends State<Navigationbar> {
 
   @override
   Widget build(BuildContext context) {
-    /// [AnnotatedRegion<SystemUiOverlayStyle>] only for android black navigation bar. 3 button navigation control (legacy)
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        systemNavigationBarColor: navigationBarColor,
-        systemNavigationBarIconBrightness: Brightness.dark,
+        // systemNavigationBarDividerColor: Colors.green,
+        // statusBarColor: Colors.black54,
+        // systemNavigationBarColor: Colors.black54,
+        systemNavigationBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
-        backgroundColor: Colors.black,
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: <Widget>[
-            Container(
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.bookmark_rounded,
-                size: 56,
-                color: Colors.amber[400],
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.favorite_rounded,
-                size: 56,
-                color: Colors.red[400],
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.email_rounded,
-                size: 56,
-                color: Colors.green[400],
-              ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.folder_rounded,
-                size: 56,
-                color: Colors.blue[400],
-              ),
-            ),
+            HomePage(),
+            MatchesPage(),
+            ChatingPage(),
+            ProfilePage(),
           ],
         ),
         bottomNavigationBar: WaterDropNavBar(
-          waterDropColor: Colors.pink,
-          backgroundColor: navigationBarColor,
+
+          waterDropColor: kPrimaryNavbuttonColor,
+          backgroundColor: kbackgroundcolor,
           onItemSelected: (int index) {
             setState(() {
               selectedIndex = index;
@@ -84,19 +63,19 @@ class _NavigationbarState extends State<Navigationbar> {
           selectedIndex: selectedIndex,
           barItems: <BarItem>[
             BarItem(
-              filledIcon: Icons.bookmark_rounded,
-              outlinedIcon: Icons.bookmark_border_rounded,
+              filledIcon: Icons.home,
+              outlinedIcon: Icons.home_outlined,
             ),
             BarItem(
                 filledIcon: Icons.favorite_rounded,
                 outlinedIcon: Icons.favorite_border_rounded),
             BarItem(
-              filledIcon: Icons.email_rounded,
-              outlinedIcon: Icons.email_outlined,
+              filledIcon: Icons.messenger,
+              outlinedIcon: Icons.messenger_outline,
             ),
             BarItem(
-              filledIcon: Icons.folder_rounded,
-              outlinedIcon: Icons.folder_outlined,
+              filledIcon: Icons.account_circle,
+              outlinedIcon: Icons.account_circle_outlined,
             ),
           ],
         ),
