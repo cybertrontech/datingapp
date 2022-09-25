@@ -20,7 +20,9 @@ class body extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Container(
                 color: Colors.pinkAccent,
                 width: 123,

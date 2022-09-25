@@ -1,4 +1,7 @@
+import 'package:datingapp/components/constant_text.dart';
 import 'package:datingapp/constants.dart';
+import 'package:datingapp/screen/home/main_page/profile_page/components/center_box.dart';
+import 'package:datingapp/screen/home/main_page/profile_page/components/image_box.dart';
 import 'package:flutter/material.dart';
 
 class body extends StatelessWidget {
@@ -10,48 +13,17 @@ class body extends StatelessWidget {
       backgroundColor: kbackgroundcolor,
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
+        title: HomeHeadText(text: 'Tinder',)
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              SizedBox(height: 15,),
-              Container(
-                color: Colors.greenAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.greenAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.yellow,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.greenAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.greenAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.redAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.greenAccent,
-                width: 123,
-                height: 323,
-              ), Container(
-                color: Colors.red,
-                width: 123,
-                height: 323,
-              ),
-            ],
-          ),
+        child: Column(
+          children: [
+            SizedBox(height: 20,),
+            ImageBox(),
+            SizedBox(height: 20,),
+            CenterBox(),
+
+          ],
         ),
       ),
     );

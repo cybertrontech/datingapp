@@ -32,7 +32,7 @@ class _StatusFormState extends State<StatusForm> {
             SizedBox(height: 50,),
             ReligiousStatus(),
             builcastFormField(),
-            SizedBox(height: MediaQuery.of(context).size.height*0.1),
+            SizedBox(height: MediaQuery.of(context).size.height*0.06),
             DefaultButton(
                 text: "Continue",
                 press: () {
