@@ -1,6 +1,7 @@
 import 'package:datingapp/routes.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
+import 'package:datingapp/screen/sign_up/sign_up_screen.dart';
 import 'package:datingapp/secured_storage/storage.dart';
 import "package:get/get.dart";
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
   checkUserLoggedInStatus() async {
     String? tok = await SecuredStorage.getToken();
     if (tok == null) {
-      Get.offAndToNamed(SignInScreen.routeName);
+      Get.offAndToNamed(SignUpScreen.routeName);
     } else {
       Get.offAndToNamed(HomeScreen.routeName);
     }

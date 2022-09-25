@@ -12,27 +12,14 @@ class StatusHead extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadingText(text: 'Tell us about your social status',),
-
+        HeadingText(
+          text: 'Tell us about your social status',
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 3),
-          child: SemiText(text: 'Add these details to find like-minded matches',),
-        ),
-
-        Row(
-          children: [
-            // CircularButton(
-            //   text: "+2",
-            //   onPressed: (){
-            //   },
-            // ),
-            // SizedBox(width: 12,),
-            // CircularButton(
-            //   text: "Bsc",
-            //   onPressed: (){
-            //   },
-            // ),
-          ],
+          child: SemiText(
+            text: 'Add these details to find like-minded matches',
+          ),
         ),
       ],
     );

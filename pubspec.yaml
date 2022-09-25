@@ -54,6 +54,7 @@ dependencies:
   #state_management
   get: ^4.6.5
   widget_circular_animator: ^1.0.0
+  seekbar: ^0.0.2
 
 
 

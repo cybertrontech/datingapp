@@ -12,12 +12,11 @@ class ImageBox extends StatelessWidget {
       children: [
         // WidgetCircularAnimators(),
         SizedBox(height: 5,),
+        WidgetCircularAnimators(),
+        SizedBox(height: 10,),
         Text("Kripas,21",
           style: TextStyle(color: Colors.black87,
               fontSize: 30,fontWeight: FontWeight.bold),),
-        SizedBox(height: 5,),
-
-        WidgetCircularAnimators()
       ],
     );
   }

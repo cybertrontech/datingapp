@@ -12,25 +12,14 @@ class UploadHead extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadingText(text: 'Impress them with your latest photo',),
+        HeadingText(
+          text: 'Impress them with your latest photo',
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 3),
-          child: SemiText(text: 'Profile  photos ensure a 5% increase in matches',),
-        ),
-        Row(
-          children: [
-            // CircularButton(
-            //   text: "+2",
-            //   onPressed: (){
-            //   },
-            // ),
-            // SizedBox(width: 12,),
-            // CircularButton(
-            //   text: "Bsc",
-            //   onPressed: (){
-            //   },
-            // ),
-          ],
+          child: SemiText(
+            text: 'Profile  photos ensure a 5% increase in matches',
+          ),
         ),
       ],
     );

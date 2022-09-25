@@ -7,21 +7,19 @@ class WidgetCircularAnimators extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WidgetCircularAnimator(
-      singleRing: true,
-      size: 190,
+      singleRing: false,
+      size: 185,
       innerIconsSize: 3,
       outerIconsSize: 3,
       innerAnimation: Curves.bounceIn,
       outerAnimation: Curves.bounceInOut,
       innerColor: Colors.black54,
-      innerAnimationSeconds: 10,
+      innerAnimationSeconds: 8,
       outerAnimationSeconds: 10,
       child: Container(
         decoration:
-        BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
-        child: Image.asset(
-            "assets/images/2.png"
-        ),
+            BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+        child: Image.asset("assets/images/2.png"),
       ),
     );
   }

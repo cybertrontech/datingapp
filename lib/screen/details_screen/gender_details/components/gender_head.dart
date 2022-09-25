@@ -2,7 +2,7 @@ import 'package:datingapp/components/circular_button.dart';
 import 'package:datingapp/components/constant_text.dart';
 import 'package:flutter/material.dart';
 
-class GenderHead  extends StatefulWidget {
+class GenderHead extends StatefulWidget {
   const GenderHead({Key? key}) : super(key: key);
 
   @override
@@ -18,34 +18,46 @@ class _GenderHeadState extends State<GenderHead> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HeadingText(text: "Lets start with the basics"),
-        SemiText(text: "Adding these details would help ypu get suitable matches",),
+        SemiText(
+          text: "Adding these details would help ypu get suitable matches",
+        ),
         // Text("Adding these details would help ypu get suitable matches",
         //   style: TextStyle(fontWeight:FontWeight.w500,fontSize: 10,color: Colors.black87),),
 
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
 
-        Text("Gender",style: TextStyle(fontWeight: FontWeight.bold,fontFamily:"Muli",fontSize: 15,color: Colors.black87),),
-        SizedBox(height: 0,),
+        Text(
+          "Gender",
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontFamily: "Muli",
+              fontSize: 15,
+              color: Colors.black87),
+        ),
+        SizedBox(
+          height: 0,
+        ),
         Row(
           children: [
             CircularButton(
-
               text: "Male",
-              onPressed: (){
+              onPressed: () {
                 setState(() {
                   return print("click");
                 });
               },
             ),
-            SizedBox(width: 12,),
+            SizedBox(
+              width: 12,
+            ),
             CircularButton(
               text: "Female",
-              onPressed: (){
-              },
+              onPressed: () {},
             ),
           ],
         ),
-
       ],
     );
   }

@@ -1,5 +1,7 @@
+import 'package:datingapp/binding/register_binding.dart';
 import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
 import 'package:datingapp/screen/details_screen/upload_photo/upload_image.dart';
+import 'package:datingapp/screen/home/main_page/profile_page/profile_page.dart';
 import 'package:datingapp/screen/sign_up/sign_up_screen.dart';
 import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:flutter/widgets.dart';
@@ -40,12 +42,16 @@ class RoutesClass {
         name: ForgotPasswordScreen.routeName,
         page: () => ForgotPasswordScreen()),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen()),
-    GetPage(name: SignUpScreen.routeName, page: () => SignUpScreen()),
+    GetPage(
+        name: SignUpScreen.routeName,
+        page: () => SignUpScreen(),
+        binding: RegisterBinding()),
     GetPage(name: GenderDetails.routeName, page: () => GenderDetails()),
     GetPage(name: EducationDetails.routeName, page: () => EducationDetails()),
     GetPage(
         name: SocialStatusDetails.routeName, page: () => SocialStatusDetails()),
     GetPage(name: UploadImage.routeName, page: () => UploadImage()),
     GetPage(name: PersonalDetails.routeName, page: () => PersonalDetails()),
+    // GetPage(name: ProfilePage.routeName, page: () => ProfilePage()),
   ];
 }

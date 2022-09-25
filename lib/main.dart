@@ -3,6 +3,7 @@ import 'package:datingapp/screen/home/main_page/profile_page/components/body.dar
 import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
 import 'package:datingapp/screen/details_screen/social_status_details/socail_status_details.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
+import 'package:datingapp/screen/home/main_page/profile_page/profile_page.dart';
 import 'package:datingapp/screen/splash/components/body.dart';
 import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      // home:body(),
-      initialRoute: SplashScreen.routeName,
-      getPages: RoutesClass.route,
+      home: ProfilePage(),
+      // initialRoute: HomeScreen.routeName,
+      // getPages: RoutesClass.route,
     );
   }
 }
