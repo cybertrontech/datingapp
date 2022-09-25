@@ -13,19 +13,20 @@ class body extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
       ),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               PersonalDetailsHead(),
               PersonalDetailsForm()
-
             ],
           ),
         ),
-      ) ,
+      ),
     );
   }
 }

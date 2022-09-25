@@ -1,6 +1,8 @@
 import 'package:datingapp/components/custom_surfix_icon.dart';
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/controller/register_controller.dart';
+import 'package:datingapp/routes.dart';
+import 'package:datingapp/screen/details_screen/gender_details/gender_details.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
@@ -73,9 +75,10 @@ class _SignUpFormState extends State<SignUpForm> {
                   if (_formKey.currentState!.validate() &&
                       Get.find<RegisterController>().loading.value == false) {
                     _formKey.currentState!.save();
+                    Get.toNamed(GenderDetails.routeName);
                     // Navigator.pushNamed(context, SignInScreen.routeName);
-                    Get.find<RegisterController>()
-                        .createUser(email, password, firstname, lastname);
+                    // Get.find<RegisterController>()
+                    //     .createUser(email, password, firstname, lastname);
                   }
                 }),
           ),

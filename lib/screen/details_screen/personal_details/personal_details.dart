@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-
 class PersonalDetails extends StatelessWidget {
   static String routeName = "/personaldetails";
 
