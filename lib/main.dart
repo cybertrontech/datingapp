@@ -6,6 +6,7 @@ import 'package:datingapp/screen/splash/components/body.dart';
 import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 import 'screen/home/navigation_button_screen/components/nav_button_bar.dart';
 
@@ -18,14 +19,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Dating App',
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: Navigationbar(),
-      // initialRoute: SplashScreen.routeName,
-      // routes: routes,
+      // home:  test(),
+      initialRoute: SplashScreen.routeName,
+      getPages: RoutesClass.route,
     );
   }
 }

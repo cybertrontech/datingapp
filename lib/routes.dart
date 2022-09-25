@@ -41,6 +41,11 @@ class RoutesClass {
         page: () => ForgotPasswordScreen()),
     GetPage(name: HomeScreen.routeName, page: () => HomeScreen()),
     GetPage(name: SignUpScreen.routeName, page: () => SignUpScreen()),
-    GetPage(name: GenderDetails.routeName, page: () => GenderDetails())
+    GetPage(name: GenderDetails.routeName, page: () => GenderDetails()),
+    GetPage(name: EducationDetails.routeName, page: () => EducationDetails()),
+    GetPage(
+        name: SocialStatusDetails.routeName, page: () => SocialStatusDetails()),
+    GetPage(name: UploadImage.routeName, page: () => UploadImage()),
+    GetPage(name: PersonalDetails.routeName, page: () => PersonalDetails()),
   ];
 }

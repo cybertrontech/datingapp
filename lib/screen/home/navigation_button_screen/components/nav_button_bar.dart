@@ -2,13 +2,12 @@ import 'package:datingapp/constants.dart';
 import 'package:datingapp/screen/home/main_page/chating_page/chating_page.dart';
 import 'package:datingapp/screen/home/main_page/matches_page/matches_page.dart';
 import 'package:datingapp/screen/home/main_page/profile_page/profile_page.dart';
+import 'package:datingapp/reusable/reusable_functional_components/logout_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 import '../../main_page/home_page/home_page.dart';
-
-
 
 class Navigationbar extends StatefulWidget {
   const Navigationbar({Key? key}) : super(key: key);
@@ -16,10 +15,7 @@ class Navigationbar extends StatefulWidget {
   _NavigationbarState createState() => _NavigationbarState();
 }
 
-
-
 class _NavigationbarState extends State<Navigationbar> {
-
   int selectedIndex = 0;
   late PageController pageController;
   @override
@@ -49,7 +45,6 @@ class _NavigationbarState extends State<Navigationbar> {
           ],
         ),
         bottomNavigationBar: WaterDropNavBar(
-
           waterDropColor: kPrimaryNavbuttonColor,
           backgroundColor: kbackgroundcolor,
           onItemSelected: (int index) {

@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:datingapp/components/custom_surfix_icon.dart';
+import "package:get/get.dart";
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
 import 'package:datingapp/constants/url_constants/api_constants.dart';
@@ -35,7 +35,9 @@ class _SignFormState extends State<SignForm> {
       });
       try {
         int a = await SecuredStorage.storeloginInfo(json.decode(response.body));
+        print("the print is $a");
         if (a == 1) {
+          Get.offAndToNamed(HomeScreen.routeName);
         } else {
           NullThrownError();
         }
