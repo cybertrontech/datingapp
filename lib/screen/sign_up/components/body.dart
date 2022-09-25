@@ -1,7 +1,5 @@
 import 'package:datingapp/components/socal_card.dart';
 import 'package:flutter/material.dart';
-
-
 import 'sign_up_form.dart';
 
 class Body extends StatelessWidget {
@@ -11,16 +9,19 @@ class Body extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: (20)),
+          padding: EdgeInsets.symmetric(horizontal: (20)),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(height: 50),
-                Text("Register Account",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 28,
-                ),),
+                Text(
+                  "Register Account",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28,
+                  ),
+                ),
                 SizedBox(height: 5),
-
                 Text(
                   "Complete your details or continue \nwith social media",
                   textAlign: TextAlign.center,

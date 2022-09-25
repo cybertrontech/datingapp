@@ -1,10 +1,11 @@
 import 'package:datingapp/components/custom_surfix_icon.dart';
 import 'package:datingapp/components/default_button.dart';
+import 'package:datingapp/controller/register_controller.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../constants.dart';
-
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -13,9 +14,23 @@ class SignUpForm extends StatefulWidget {
 
 class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
+
   String? email;
   String? password;
   String? conform_password;
+  String? firstname;
+  String? lastname;
+
+  @override
+  void initState() {
+    super.initState();
+    email = Get.find<RegisterController>().email.value;
+    password = Get.find<RegisterController>().password.value;
+    conform_password = Get.find<RegisterController>().confirmPassword.value;
+    lastname = Get.find<RegisterController>().lastName.value;
+    firstname = Get.find<RegisterController>().firstName.value;
+  }
+
   bool remember = false;
   final List<String?> errors = [];
 
@@ -41,18 +56,28 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           buildEmailFormField(),
           SizedBox(height: (30)),
+          buildFirstNameFormField(),
+          SizedBox(height: (30)),
+          buildLastNameFormField(),
+          SizedBox(height: (30)),
           buildPasswordFormField(),
           SizedBox(height: (30)),
           buildConformPassFormField(),
-          SizedBox(height: (40)),
-          DefaultButton(
-              text: "Continue",
-              press: () {
-                if (_formKey.currentState!.validate()) {
-                  _formKey.currentState!.save();
-                  Navigator.pushNamed(context, SignInScreen.routeName);
-                }
-              }
+          SizedBox(height: (30)),
+          Obx(
+            () => DefaultButton(
+                text: Get.find<RegisterController>().loading.value == true
+                    ? "Load.."
+                    : "Continue",
+                press: () {
+                  if (_formKey.currentState!.validate() &&
+                      Get.find<RegisterController>().loading.value == false) {
+                    _formKey.currentState!.save();
+                    // Navigator.pushNamed(context, SignInScreen.routeName);
+                    Get.find<RegisterController>()
+                        .createUser(email, password, firstname, lastname);
+                  }
+                }),
           ),
         ],
       ),
@@ -62,6 +87,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextFormField buildConformPassFormField() {
     return TextFormField(
       obscureText: true,
+      initialValue: conform_password,
       onSaved: (newValue) => conform_password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -69,7 +95,7 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (value.isNotEmpty && password == conform_password) {
           removeError(error: kMatchPassError);
         }
-        conform_password = value;
+        Get.find<RegisterController>().changeConfirmPassword(value);
       },
       validator: (value) {
         if (value!.isEmpty) {
@@ -79,6 +105,7 @@ class _SignUpFormState extends State<SignUpForm> {
           addError(error: kMatchPassError);
           return "";
         }
+
         return null;
       },
       decoration: InputDecoration(
@@ -95,6 +122,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
+      initialValue: password,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -102,7 +130,7 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
-        password = value;
+        Get.find<RegisterController>().changePassword(value);
       },
       validator: (value) {
         if (value!.isEmpty) {
@@ -112,7 +140,7 @@ class _SignUpFormState extends State<SignUpForm> {
           addError(error: kShortPassError);
           return "";
         }
-        return null;
+        // return null;
       },
       decoration: InputDecoration(
         labelText: "Password",
@@ -128,6 +156,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      initialValue: email,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -135,7 +164,8 @@ class _SignUpFormState extends State<SignUpForm> {
         } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
-        return null;
+        Get.find<RegisterController>().changeEmail(value);
+        // return null;
       },
       validator: (value) {
         if (value!.isEmpty) {
@@ -150,6 +180,76 @@ class _SignUpFormState extends State<SignUpForm> {
       decoration: InputDecoration(
         labelText: "Email",
         hintText: "Enter your email",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+      ),
+    );
+  }
+
+  TextFormField buildFirstNameFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.text,
+      initialValue: firstname,
+      onSaved: (newValue) => firstname = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (nameValidationRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
+        }
+        Get.find<RegisterController>().changeFirstname(value);
+        // return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kEmailNullError);
+          return "";
+        } else if (!nameValidationRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Firstname",
+        hintText: "Enter your firstname.",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+      ),
+    );
+  }
+
+  TextFormField buildLastNameFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.text,
+      initialValue: lastname,
+      onSaved: (newValue) => lastname = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (lastnameValidationRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
+        }
+        Get.find<RegisterController>().changeLastname(value);
+        // return null;
+      },
+      validator: (value) {
+        if (value!.isEmpty) {
+          addError(error: kEmailNullError);
+          return "";
+        } else if (!lastnameValidationRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Lastname",
+        hintText: "Enter your lastname.",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

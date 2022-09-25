@@ -12,17 +12,21 @@ class body extends StatelessWidget {
     return Scaffold(
       backgroundColor: kbackgroundcolor,
       appBar: AppBar(
-        backgroundColor: kPrimaryColor,
-        title: HomeHeadText(text: 'Tinder',)
-      ),
+          backgroundColor: kPrimaryColor,
+          title: HomeHeadText(
+            text: 'Tinder',
+          )),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             ImageBox(),
-            SizedBox(height: 20,),
+            SizedBox(
+              height: 20,
+            ),
             CenterBox(),
-
           ],
         ),
       ),

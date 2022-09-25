@@ -18,10 +18,8 @@ class WidgetCircularAnimators extends StatelessWidget {
       outerAnimationSeconds: 10,
       child: Container(
         decoration:
-        BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
-        child: Image.asset(
-            "assets/images/2.png"
-        ),
+            BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+        child: Image.asset("assets/images/2.png"),
       ),
     );
   }

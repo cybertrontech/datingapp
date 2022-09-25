@@ -12,13 +12,15 @@ class EducationHead extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadingText(text: 'Talk about education & career',),
-
+        HeadingText(
+          text: 'Talk about education & career',
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 3),
-          child: SemiText(text: 'Mentioning this would help profiles know you better',),
+          child: SemiText(
+            text: 'Mentioning this would help profiles know you better',
+          ),
         ),
-
         Row(
           children: [
             // CircularButton(

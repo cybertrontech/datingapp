@@ -12,12 +12,14 @@ class PersonalDetailsHead extends StatelessWidget {
       // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadingText(text: 'Tell us about yourself',),
-        SizedBox(height: 2,),
-        SemiText(text: 'Write about ypur personality,interests,hobbies & more',),
-        Row(
-          children: [
-          ],
+        HeadingText(
+          text: 'Tell us about yourself',
+        ),
+        SizedBox(
+          height: 2,
+        ),
+        SemiText(
+          text: 'Write about ypur personality,interests,hobbies & more',
         ),
       ],
     );
