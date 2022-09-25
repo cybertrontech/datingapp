@@ -1,13 +1,16 @@
+import 'dart:convert';
 
 import 'package:datingapp/components/custom_surfix_icon.dart';
 import 'package:datingapp/components/default_button.dart';
 import 'package:datingapp/constants.dart';
+import 'package:datingapp/constants/url_constants/api_constants.dart';
+import 'package:datingapp/secured_storage/storage.dart';
+import 'package:http/http.dart' as http;
 import 'package:datingapp/screen/details_screen/gender_details/gender_details.dart';
 import 'package:datingapp/screen/forgot_password/forgot_password_screen.dart';
 import 'package:datingapp/screen/home/home_screen.dart';
 import 'package:datingapp/screen/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class SignForm extends StatefulWidget {
   @override
@@ -15,10 +18,37 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
-
-
-
-
+  Future<void> login() async {
+    setState(() {
+      loading = true;
+    });
+    var url = Uri.parse("${ApiConstants.url}/login");
+    Map<String, String> body = {
+      "email": emailController.text.toString(),
+      "password": passwordController.text.toString(),
+    };
+    var response = await http.post(url,
+        headers: {"Content-Type": "application/json"}, body: json.encode(body));
+    if (response.statusCode == 200) {
+      setState(() {
+        loading = false;
+      });
+      try {
+        int a = await SecuredStorage.storeloginInfo(json.decode(response.body));
+        if (a == 1) {
+        } else {
+          NullThrownError();
+        }
+      } catch (e) {
+        //SHOW ERROR HERE
+        print("Sorry something went wrong.");
+      }
+    } else {
+      setState(() {
+        loading = false;
+      });
+    }
+  }
 
   final _formKey = GlobalKey<FormState>();
   String? email;
@@ -39,10 +69,12 @@ class _SignFormState extends State<SignForm> {
         errors.remove(error);
       });
   }
+
   bool hidepassword = true;
   bool _passwordVisible = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +101,7 @@ class _SignFormState extends State<SignForm> {
               Spacer(),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(
-                      context, ForgotPasswordScreen.routeName);
+                  Navigator.pushNamed(context, ForgotPasswordScreen.routeName);
                 },
                 child: Text(
                   "Forgot Password",
@@ -81,14 +112,16 @@ class _SignFormState extends State<SignForm> {
           ),
           SizedBox(height: (20)),
           DefaultButton(
-            text: "Continue",
-            press: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                Navigator.pushNamed(context, GenderDetails.routeName);
-              }
-            }
-          ),
+              text: loading == true ? "Load..." : "Continue",
+              press: () {
+                if (_formKey.currentState!.validate()) {
+                  _formKey.currentState!.save();
+                  // Navigator.pushNamed(context, GenderDetails.routeName);
+                }
+                if (loading == false) {
+                  login();
+                }
+              }),
           // MaterialButton(
           //   color: kPrimaryColor,
           //   child:Text("Continue",style: TextStyle(color: kPrimaryLightColor),),
@@ -105,9 +138,9 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-
   TextFormField buildEmailFormField() {
-    return TextFormField(// maxLength: 10,
+    return TextFormField(
+      // maxLength: 10,
       autofocus: true,
       maxLines: 1,
       controller: emailController,
@@ -132,23 +165,24 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+          labelText: "Email",
+          hintText: "Enter your email",
 
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: Icon(Icons.email_outlined,color:  Theme.of(context).primaryColorDark,)
-      ),
+          // If  you are using latest version of flutter then lable text and hint text shown like this
+          // if you r using flutter less then 1.20.* then maybe this is not working properly
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          suffixIcon: Icon(
+            Icons.email_outlined,
+            color: Theme.of(context).primaryColorDark,
+          )),
     );
   }
+
   TextFormField buildPasswordFormField() {
     return TextFormField(
-      keyboardType:
-      TextInputType.visiblePassword,
+      keyboardType: TextInputType.visiblePassword,
       controller: passwordController,
       obscureText: !_passwordVisible,
-
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
         if (value.isNotEmpty) {
@@ -173,9 +207,7 @@ class _SignFormState extends State<SignForm> {
         suffixIcon: IconButton(
           icon: Icon(
             // Based on passwordVisible state choose the icon
-            _passwordVisible
-                ? Icons.visibility
-                : Icons.visibility_off,
+            _passwordVisible ? Icons.visibility : Icons.visibility_off,
             color: Theme.of(context).primaryColorDark,
           ),
           onPressed: () {
@@ -186,8 +218,7 @@ class _SignFormState extends State<SignForm> {
           },
         ),
 
-
-      labelText: "Password",
+        labelText: "Password",
         hintText: "Enter your password",
         floatingLabelBehavior: FloatingLabelBehavior.always,
         // suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
