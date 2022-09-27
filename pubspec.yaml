@@ -55,6 +55,7 @@ dependencies:
   get: ^4.6.5
   widget_circular_animator: ^1.0.0
   seekbar: ^0.0.2
+  google_sign_in: ^5.4.2
 
 
 

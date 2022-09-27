@@ -20,18 +20,29 @@ class _PersonalDetailsFormState extends State<PersonalDetailsForm> {
       key: _formKey,
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 35,
           ),
           buildHeightFormField(),
+          buildPhonenumberField(),
+          Obx(
+            () => Text(
+              Get.find<RegisterController>().errorMessage.value,
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.55),
-          DefaultButton(
-              text: "Create my profile",
-              press: () {
-                Get.find<RegisterController>().createUser();
-                // print("object");
-                // Navigator.pushNamed(context, HomeScreen.routeName);
-              }),
+          Obx(
+            () => Get.find<RegisterController>().loading.value == true
+                ? DefaultButton(text: "Load...", press: () {})
+                : DefaultButton(
+                    text: "Create my profile",
+                    press: () {
+                      Get.find<RegisterController>().createUser();
+                      // print("object");
+                      // Navigator.pushNamed(context, HomeScreen.routeName);
+                    }),
+          ),
         ],
       ),
     );
@@ -41,13 +52,31 @@ class _PersonalDetailsFormState extends State<PersonalDetailsForm> {
 TextFormField buildHeightFormField() {
   return TextFormField(
     onTap: () {},
-    // obscureText: true,
+    // obscureText: truen,
+    initialValue: Get.find<RegisterController>().bio.value,
     onChanged: (val) {
       Get.find<RegisterController>().changeBio(val);
     },
     decoration: InputDecoration(
       labelText: "",
       hintText: "Write minimum of 25 words.",
+      hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+      floatingLabelBehavior: FloatingLabelBehavior.always,
+    ),
+  );
+}
+
+TextFormField buildPhonenumberField() {
+  return TextFormField(
+    onTap: () {},
+    // obscureText: truen,
+    initialValue: Get.find<RegisterController>().phonenumber.value,
+    onChanged: (val) {
+      Get.find<RegisterController>().changePhonenumber(val);
+    },
+    decoration: InputDecoration(
+      labelText: "",
+      hintText: "Phonenumber",
       hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
       floatingLabelBehavior: FloatingLabelBehavior.always,
     ),

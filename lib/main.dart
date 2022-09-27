@@ -9,7 +9,6 @@ import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-
 import 'screen/home/navigation_button_screen/components/nav_button_bar.dart';
 
 void main() {
@@ -26,9 +25,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: ProfilePage(),
-      // initialRoute: HomeScreen.routeName,
-      // getPages: RoutesClass.route,
+      // home: ProfilePage(),
+      initialRoute: SplashScreen.routeName,
+      getPages: RoutesClass.route,
     );
   }
 }
