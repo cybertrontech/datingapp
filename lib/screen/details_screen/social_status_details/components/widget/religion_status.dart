@@ -1,7 +1,9 @@
 import 'package:datingapp/components/circular_button.dart';
 import 'package:datingapp/components/constant_text.dart';
 import 'package:datingapp/constants.dart';
+import 'package:datingapp/controller/register_controller.dart';
 import 'package:flutter/material.dart';
+import "package:get/get.dart";
 
 class ReligiousStatus extends StatefulWidget {
   const ReligiousStatus({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
   bool christianChosen = false;
   bool muslimChosen = false;
   bool jewChosen = false;
+  bool othersChosen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +37,12 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
             children: [
               athiestChosen == true
                   ? CircularButton(
-                      text: "Athiest",
+                      text: "Athiesm",
                       onPressed: () {},
                       color: kPrimaryColor,
                     )
                   : CircularButton(
-                      text: "Athiest",
+                      text: "Athiesm",
                       onPressed: () {
                         setState(() {
                           athiestChosen = true;
@@ -48,7 +51,10 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = false;
                           muslimChosen = false;
                           jewChosen = false;
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>()
+                            .changeReligion("Athiesm");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -71,7 +77,10 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = false;
                           muslimChosen = false;
                           jewChosen = false;
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>()
+                            .changeReligion("Hinduism");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -94,7 +103,11 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = false;
                           muslimChosen = false;
                           jewChosen = false;
+
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>()
+                            .changeReligion("Buddhisim");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -117,7 +130,11 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = true;
                           muslimChosen = false;
                           jewChosen = false;
+
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>()
+                            .changeReligion("Christianity");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -145,7 +162,10 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = false;
                           muslimChosen = true;
                           jewChosen = false;
+
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>().changeReligion("Muslim");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
@@ -168,10 +188,37 @@ class _ReligiousStatusState extends State<ReligiousStatus> {
                           christianChosen = false;
                           muslimChosen = false;
                           jewChosen = true;
+                          othersChosen = false;
                         });
+                        Get.find<RegisterController>().changeReligion("Jew");
                       },
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
+              SizedBox(
+                width: 5,
+              ),
+              othersChosen == true
+                  ? CircularButton(
+                      text: "Others",
+                      onPressed: () {},
+                      color: kPrimaryColor,
+                    )
+                  : CircularButton(
+                      text: "Others",
+                      onPressed: () {
+                        setState(() {
+                          athiestChosen = false;
+                          hinduChosen = false;
+                          buddhismChosen = false;
+                          christianChosen = false;
+                          muslimChosen = false;
+                          jewChosen = false;
+                          othersChosen = true;
+                        });
+                        Get.find<RegisterController>().changeReligion("Others");
+                      },
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    )
             ],
           ),
         ),

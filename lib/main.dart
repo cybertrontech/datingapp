@@ -1,4 +1,6 @@
 import 'package:datingapp/routes.dart';
+import 'package:datingapp/screen/details_screen/education_details/education_details.dart';
+import 'package:datingapp/screen/details_screen/upload_photo/upload_image.dart';
 import 'package:datingapp/screen/home/main_page/profile_page/components/body.dart';
 import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
 import 'package:datingapp/screen/details_screen/social_status_details/socail_status_details.dart';
@@ -9,7 +11,6 @@ import 'package:datingapp/screen/splash/splash_page.dart';
 import 'package:datingapp/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-
 import 'screen/home/navigation_button_screen/components/nav_button_bar.dart';
 
 void main() {
@@ -26,9 +27,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: ProfilePage(),
-      // initialRoute: HomeScreen.routeName,
-      // getPages: RoutesClass.route,
+      // home: UploadImage(),
+      initialRoute: HomeScreen.routeName,
+      getPages: RoutesClass.route,
     );
   }
 }

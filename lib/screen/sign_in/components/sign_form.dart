@@ -18,6 +18,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  bool loading = false;
   Future<void> login() async {
     setState(() {
       loading = true;
@@ -30,12 +31,12 @@ class _SignFormState extends State<SignForm> {
     var response = await http.post(url,
         headers: {"Content-Type": "application/json"}, body: json.encode(body));
     if (response.statusCode == 200) {
+      print(response.body);
       setState(() {
         loading = false;
       });
       try {
         int a = await SecuredStorage.storeloginInfo(json.decode(response.body));
-        print("the print is $a");
         if (a == 1) {
           Get.offAndToNamed(HomeScreen.routeName);
         } else {
@@ -74,9 +75,10 @@ class _SignFormState extends State<SignForm> {
 
   bool hidepassword = true;
   bool _passwordVisible = false;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  bool loading = false;
+  TextEditingController emailController =
+      TextEditingController(text: "yugalkhati570@gmail.com");
+  TextEditingController passwordController =
+      TextEditingController(text: "pythonjs");
 
   @override
   Widget build(BuildContext context) {
@@ -116,11 +118,8 @@ class _SignFormState extends State<SignForm> {
           DefaultButton(
               text: loading == true ? "Load..." : "Continue",
               press: () {
-                if (_formKey.currentState!.validate()) {
+                if (_formKey.currentState!.validate() && loading == false) {
                   _formKey.currentState!.save();
-                  Navigator.pushNamed(context, GenderDetails.routeName);
-                }
-                if (loading == false) {
                   login();
                 }
               }),

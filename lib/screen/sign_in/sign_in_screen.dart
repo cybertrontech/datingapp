@@ -8,11 +8,13 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:kbackgroundcolor,
-
+      backgroundColor: kbackgroundcolor,
       appBar: AppBar(
-        backgroundColor:kPrimaryColor,
-        title: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold),),
+        backgroundColor: kPrimaryColor,
+        title: Text(
+          "Sign In",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Body(),
     );

@@ -27,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
   checkUserLoggedInStatus() async {
     String? tok = await SecuredStorage.getToken();
     if (tok == null) {
-      Get.offAndToNamed(SignUpScreen.routeName);
+      // Get.offAndToNamed(SignUpScreen.routeName);
+      Get.offAndToNamed(SignInScreen.routeName);
     } else {
       Get.offAndToNamed(HomeScreen.routeName);
     }

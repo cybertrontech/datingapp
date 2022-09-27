@@ -25,7 +25,7 @@ class body extends StatelessWidget {
               SizedBox(height: 15,),
               UploadHead(),
               SizedBox(height: 100,),
-
+              // imagepicker(),
               UploadBody()
 
             ],

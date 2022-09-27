@@ -44,7 +44,9 @@ dependencies:
   page_transition: ^2.0.9
   sliding_up_panel: ^2.0.0+1
   water_drop_nav_bar: ^2.2.0+4
-  appinio_swiper: ^1.1.0
+  image_picker: ^0.8.5+3
+  swipeable_card_stack: ^0.0.5
+  swipable_stack: ^2.0.0
 
 
   #api_fetch
@@ -55,6 +57,7 @@ dependencies:
   get: ^4.6.5
   widget_circular_animator: ^1.0.0
   seekbar: ^0.0.2
+  google_sign_in: ^5.4.2
 
 
 

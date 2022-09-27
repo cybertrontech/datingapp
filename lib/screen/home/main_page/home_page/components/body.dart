@@ -1,35 +1,97 @@
-import 'package:datingapp/constants.dart';
-import 'package:datingapp/screen/details_screen/education_details/components/education_form.dart';
-import 'package:datingapp/screen/details_screen/education_details/components/eduction_head.dart';
-import 'package:datingapp/screen/details_screen/social_status_details/components/status_form.dart';
-import 'package:datingapp/screen/details_screen/social_status_details/components/status_head.dart';
+import 'package:datingapp/screen/home/main_page/home_page/widgets/card_overlay.dart';
+import 'package:datingapp/screen/home/main_page/home_page/widgets/example_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:swipable_stack/swipable_stack.dart';
 
-class body extends StatelessWidget {
-  const body({Key? key}) : super(key: key);
+
+
+const _images = [
+  'assets/images/image_5.jpg',
+  'assets/images/image_3.jpg',
+  'assets/images/image_4.jpg',
+];
+
+
+class body extends StatefulWidget {
+  const body({super.key});
+  @override
+  _bodyState createState() => _bodyState();
+}
+
+class _bodyState extends State<body> {
+  late final SwipableStackController _controller;
+  void _listenController() => setState(() {});
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = SwipableStackController()..addListener(_listenController);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller
+      ..removeListener(_listenController)
+      ..dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kbackgroundcolor,
       appBar: AppBar(
-        backgroundColor: kPrimaryColor,
+        title: const Text('BasicExample'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 15,
+      // drawer: const GeneralDrawer(),
+      body: SafeArea(
+        top: false,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: SwipableStack(
+                  detectableSwipeDirections: const {
+                    SwipeDirection.right,
+                    SwipeDirection.left,
+                  },
+                  controller: _controller,
+                  stackClipBehaviour: Clip.none,
+                  onSwipeCompleted: (index, direction) {
+                    if (kDebugMode) {
+                      print('$index, $direction');}},
+                  horizontalSwipeThreshold: 0.8,
+                  verticalSwipeThreshold: 0.8,
+                  builder: (context, properties) {
+                    final itemIndex = properties.index % _images.length;
+
+                    return Stack(
+                      children: [
+                        ExampleCard(
+                          name: 'Sample No.${itemIndex + 1}',
+                          assetPath: _images[itemIndex],),
+                        // more custom overlay possible than with overlayBuilder
+                        if (properties.stackIndex == 0 &&
+                            properties.direction != null)
+                          CardOverlay(
+                            swipeProgress: properties.swipeProgress,
+                            direction: properties.direction!,
+                          )
+                      ],
+                    );
+                  },
+                ),
               ),
-              Container(
-                color: Colors.pinkAccent,
-                width: 123,
-                height: 323,
-              )
-            ],
-          ),
+            ),
+            // BottomButtonsRow(
+            //   onSwipe: (direction) {
+            //     _controller.next(swipeDirection: direction);
+            //   },
+            //   onRewindTap: _controller.rewind,
+            //   canRewind: _controller.canRewind,
+            // ),
+          ],
         ),
       ),
     );
