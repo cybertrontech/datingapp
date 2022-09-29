@@ -13,15 +13,16 @@ class ExampleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return ClipRRect(
-      child: Stack(
+    return Scaffold(
+      body: Stack(
         children: [
+
           Positioned.fill(
             child: DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
                 image: DecorationImage(
-                  image: AssetImage(assetPath),
+                  image: AssetImage(assetPath,),
                   fit: BoxFit.cover,
                 ),
                 boxShadow: [
@@ -37,7 +38,7 @@ class ExampleCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 200,
+              height: 120,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.vertical(
@@ -56,7 +57,7 @@ class ExampleCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding:  EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,5 +75,7 @@ class ExampleCard extends StatelessWidget {
         ],
       ),
     );
+
+
   }
 }

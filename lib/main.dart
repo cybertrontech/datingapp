@@ -1,6 +1,7 @@
 import 'package:datingapp/routes.dart';
 import 'package:datingapp/screen/details_screen/education_details/education_details.dart';
 import 'package:datingapp/screen/details_screen/upload_photo/upload_image.dart';
+import 'package:datingapp/screen/home/main_page/home_page/widgets/details_page.dart';
 import 'package:datingapp/screen/home/main_page/profile_page/components/body.dart';
 import 'package:datingapp/screen/details_screen/personal_details/personal_details.dart';
 import 'package:datingapp/screen/details_screen/social_status_details/socail_status_details.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      // home: UploadImage(),
+      // home: DetailsPage(),
       initialRoute: HomeScreen.routeName,
       getPages: RoutesClass.route,
     );
