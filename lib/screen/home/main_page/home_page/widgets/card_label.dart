@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
+import 'package:datingapp/screen/home/main_page/home_page/other_screen/details_page.dart';
 import 'package:datingapp/screen/home/main_page/home_page/theme/colors.dart';
-import 'package:datingapp/screen/home/main_page/home_page/widgets/details_page.dart';
 import 'package:flutter/material.dart';
 
 const _labelAngle = math.pi / 2 * 0.2;

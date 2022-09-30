@@ -1,4 +1,5 @@
 import 'package:datingapp/components/circular_button.dart';
+import 'package:datingapp/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -23,10 +24,10 @@ class _DetailsPageState extends State<DetailsPage> {
                 floating: true,
                 pinned: true,
                 snap: true,
-                // collapsedHeight: 116,
-                // actionsIconTheme: IconThemeData(opacity: 0.0),
-                // toolbarHeight: 56,
-                // titleSpacing: 0,
+                collapsedHeight: 116,
+                actionsIconTheme: IconThemeData(opacity: 0.0),
+                toolbarHeight: 56,
+                titleSpacing: 0,
                 centerTitle: false,
                 leading: Align(
                   alignment: Alignment.centerLeft,
@@ -35,7 +36,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     width: 40,
                     margin: EdgeInsets.only(left: 16),
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: kPrimaryColor,
                       borderRadius: BorderRadius.circular(100),
                       boxShadow: [
                         BoxShadow(
@@ -52,7 +53,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       },
                       icon: Icon(
                         Icons.arrow_back_rounded,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -63,7 +64,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     height: 67,
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: kbackgroundcolor,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(28),
                         topRight: Radius.circular(28),
@@ -79,7 +80,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: [
                                 SizedBox(width: 2),
                                 Text(
-                                  'Mirian, 24',
+                                  'Sunny Leoni, 34',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 16,
@@ -96,7 +97,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                         decoration: BoxDecoration(
                                           color: Colors.blue[300],
                                           borderRadius:
-                                              BorderRadius.circular(100),
+                                          BorderRadius.circular(100),
                                         ),
                                       ),
                                       Center(
@@ -131,45 +132,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             ),
                           ],
                         ),
-                        Container(
-                          height: 34,
-                          width: 34,
-                          child: Stack(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.green[300],
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                              ),
-                              Container(
-                                height: 18,
-                                width: 18,
-                                color: Colors.white,
-                              ),
-                              Center(
-                                child: Container(
-                                  height: 28,
-                                  width: 28,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(100),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                child: Text(
-                                  '9.2',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+
                       ],
                     ),
                   ),
@@ -181,7 +144,7 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Container(
                             padding: EdgeInsets.only(bottom: 86),
                             child: Image.network(
-                              "https://www.digitaletextil.com.br/blog/wp-content/uploads/2020/12/modelos-de-maio-corpo6.jpeg",
+                              "https://m.photos.timesofindia.com/thumb.cms?msid=54376363&width=500&resizemode=4",
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -222,7 +185,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.network(
-                                        "https://cdn.eutotal.com/imagens/maio-eu-total-0-cke.jpg",
+                                        "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -235,7 +198,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.network(
-                                        "https://cdn1.mundodastribos.com/704989-Moda-praia-2015-biquinis-e-maiôs-10.jpg",
+                                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2udzv9Kk4Hb_uusM9ilqff9UF7v_V1C5wbA&usqp=CAU",
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -248,7 +211,21 @@ class _DetailsPageState extends State<DetailsPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.network(
-                                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlIFMpaujqAcM7I-YWk8-dUME9ayoo1NWzARnc0Bb_T6Tv0slrMQvF6kbJN_LOQhbU9S4&usqp=CAU",
+                                        "https://encrypted-tbn0.gstatic.com/images?q=tb"
+                                            "n:ANd9GcSfDEQ6Ij-b7fGKvH_zG6L612j1EYn1A7bpHA&usqp=CAU",
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: AspectRatio(
+                                    aspectRatio: 1.4,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: Image.network(
+                                        "https://www.rvcj.com/wp-content/uploads/2015/04/sunny-leone-bikini-020111130326182444.jpg",
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -265,6 +242,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 ),
               ),
               SliverToBoxAdapter(
+
                 child: Column(
                   children: [
                     Divider(
@@ -296,41 +274,29 @@ class _DetailsPageState extends State<DetailsPage> {
                       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                       child: Row(
                         children: [
+                          // HomeCircularButton(
+                          //   text: 'Shopping',
+                          //   color: Colors.deepOrange.withOpacity(0.2),
+                          //   onPressed: () {  },),
                           Container(
                             margin: EdgeInsets.all(8),
                             padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
                             decoration: BoxDecoration(
-                              color: Colors.deepOrange.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            child: Row(
-                              children: [
-
-                                 CircularButton(onPressed: () {  },
-                                   color: Colors.pink, text: 'power',),
-
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.all(8),
-                            padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-                            decoration: BoxDecoration(
-                              color: Colors.deepOrange.withOpacity(0.2),
+                              color: Colors.pink.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(100),
                             ),
                             child: Row(
                               children: [
                                 Icon(
-                                  Icons.library_music,
-                                  color: Colors.deepOrange,
+                                  Icons.shopping_cart_rounded,
+                                  color: Colors.pinkAccent,
                                   size: 16,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
-                                  'Music',
+                                  'Shopping',
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ],
@@ -340,21 +306,45 @@ class _DetailsPageState extends State<DetailsPage> {
                             margin: EdgeInsets.all(8),
                             padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
                             decoration: BoxDecoration(
-                              color: Colors.deepOrange.withOpacity(0.2),
+                              color: Colors.pink.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.library_music,
+                                  color: Colors.pinkAccent,
+                                  size: 16,
+                                ),
+                                SizedBox(width: 8),
+                                Text(
+                                  'Music',
+                                  style: TextStyle(
+                                    color: Colors.pinkAccent,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.all(8),
+                            padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+                            decoration: BoxDecoration(
+                              color: Colors.pink.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(100),
                             ),
                             child: Row(
                               children: [
                                 Icon(
                                   Icons.local_drink_sharp,
-                                  color: Colors.deepOrange,
+                                  color: Colors.pinkAccent,
                                   size: 16,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
                                   'Coffe',
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ],
@@ -378,14 +368,14 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: [
                                 Icon(
                                   Icons.menu_book_rounded,
-                                  color: Colors.deepOrange,
+                                  color: Colors.pinkAccent,
                                   size: 16,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
                                   'Books',
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ],
@@ -402,14 +392,14 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: [
                                 Icon(
                                   Icons.airplanemode_active,
-                                  color: Colors.deepOrange,
+                                  color: Colors.pinkAccent,
                                   size: 16,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
                                   'Travel',
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ],
@@ -426,14 +416,14 @@ class _DetailsPageState extends State<DetailsPage> {
                               children: [
                                 Icon(
                                   Icons.sports_basketball,
-                                  color: Colors.deepOrange,
+                                  color: Colors.pinkAccent,
                                   size: 16,
                                 ),
                                 SizedBox(width: 8),
                                 Text(
                                   'Basketball',
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.pinkAccent,
                                   ),
                                 ),
                               ],
@@ -452,7 +442,8 @@ class _DetailsPageState extends State<DetailsPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page, testing the description of the page...',
+                        'Test of the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descri of the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descriof the page,he descri'
+                            'he page, testing the description of the page...',
                         style: TextStyle(
                           color: Colors.grey[600],
                           // fontWeight: FontWeight.bold,
@@ -522,12 +513,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     child: IconButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => MatchPage(),
-                        //   ),
-                        // );
+
                       },
                       icon: Icon(
                         Icons.favorite_rounded,
