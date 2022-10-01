@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:datingapp/screen/home/main_page/home_page/other_screen/details_page.dart';
+import 'package:datingapp/screen/home/main_page/home_page/other_screen/homepage_details_page/details_page.dart';
 import 'package:datingapp/screen/home/main_page/home_page/theme/colors.dart';
 import 'package:flutter/material.dart';
 
