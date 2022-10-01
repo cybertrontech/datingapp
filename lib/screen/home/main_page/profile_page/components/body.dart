@@ -15,7 +15,8 @@ class body extends StatelessWidget {
           backgroundColor: kPrimaryColor,
           title: HomeHeadText(
             text: 'Tinder',
-          )),
+          )
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

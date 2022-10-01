@@ -1,86 +1,121 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:seekbar/seekbar.dart';
+import 'package:get/get.dart';
 
-class TestSeekBarPage extends StatefulWidget {
-  @override
-  _TestSeekBarPageState createState() {
-    return _TestSeekBarPageState();
-  }
-}
 
-class _TestSeekBarPageState extends State<TestSeekBarPage> {
-  double _value = 0.0;
-  double _secondValue = 0.0;
 
-  late Timer _progressTimer;
-  late Timer _secondProgressTimer;
-
-  bool _done = false;
-
-  @override
-  void initState() {
-    _resumeProgressTimer();
-    _secondProgressTimer =
-        Timer.periodic(const Duration(milliseconds: 10), (_) {
-          setState(() {
-            _secondValue += 0.001;
-            if (_secondValue >= 1) {
-              _secondProgressTimer.cancel();
-            }
-          });
-        });
-    super.initState();
-  }
-
-  _resumeProgressTimer() {
-    _progressTimer = Timer.periodic(const Duration(milliseconds: 10), (_) {
-      setState(() {
-        _value += 0.0005;
-        if (_value >= 1) {
-          _progressTimer.cancel();
-          _done = true;
-        }
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _progressTimer?.cancel();
-    _secondProgressTimer?.cancel();
-    super.dispose();
-  }
+class artist extends StatelessWidget {
+  artist({Key? key}) : super(key: key);
+  final List<ListTile> items = [
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+    ListTile(
+      leading: CircleAvatar(
+        child:  Image.network(
+          "https://www.whoa.in/download/sunny-leone-bikini-and-sizzling-with-natural-background",
+          fit: BoxFit.cover,
+        ),
+      ),
+      title: Text(
+        "The Rain Dance",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 40),
-        alignment: Alignment.center,
-        color: Colors.black87,
-        child: SeekBar(
-          // value: _value,
-          // secondValue: _secondValue,
-          progressColor: Colors.blue,
-          secondProgressColor: Colors.blue.withOpacity(0.5),
-          // onStartTrackingTouch: () {
-          //   print('onStartTrackingTouch');
-          //   if (!_done) {
-          //     _progressTimer?.cancel();
-          //   }
-          // },
-          // onProgressChanged: (value) {
-          //   print('onProgressChanged:$value');
-          //   _value = value;
-          // },
-          // onStopTrackingTouch: () {
-          //   print('onStopTrackingTouch');
-          //   if (!_done) {
-          //     _resumeProgressTimer();
-          //   }
-          // },
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                SizedBox(width: 20,),
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: ListView.builder(
+                // physics: NeverScrollableScrollPhysics(),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      onTap: () {
+                      },
+                      trailing: items[index].trailing,
+                      leading: CircleAvatar(
+                        child: items[index].leading,
+                      ),
+                      title: items[index].title,
+                      subtitle: items[index].subtitle,
+                    );
+                  }),
+            ),
+          ],
         ),
       ),
     );

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      // home: DetailsPage(),
+      // home: artist(),
       initialRoute: HomeScreen.routeName,
       getPages: RoutesClass.route,
     );

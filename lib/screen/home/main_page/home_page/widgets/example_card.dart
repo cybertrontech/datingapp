@@ -75,7 +75,5 @@ class ExampleCard extends StatelessWidget {
         ],
       ),
     );
-
-
   }
 }
